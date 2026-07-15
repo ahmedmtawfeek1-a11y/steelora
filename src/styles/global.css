@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+/* ========================================
+   STEELORA Design System — Tailwind v4
+   ======================================== */
+
+@theme {
+  /* Custom Colors */
+  --color-primary: #111827;
+  --color-accent: #ea580c;
+  --color-accent-light: #fb923c;
+  --color-accent-dark: #c2410c;
+  --color-neon-cyan: #38bdf8;
+  --color-neon-cyan-dark: #0284c7;
+  --color-neon-orange: #fb923c;
+  --color-neon-orange-dark: #ea580c;
+  --color-footer-dark: #0a0a0c;
+  --color-gold: #f59e0b;
+
+  /* Custom Box Shadows — Neon Glows */
+  --shadow-neon-blue: 0 0 5px #38bdf8, 0 0 15px #0284c7;
+  --shadow-neon-orange: 0 0 5px #fb923c, 0 0 15px #ea580c;
+  --shadow-neon-orange-lg: 0 0 8px #fb923c, 0 0 20px #fb923c, 0 0 40px #ea580c;
+  --shadow-neon-cyan-sm: 0 0 6px #22d3ee;
+
+  /* Font Family */
+  --font-cairo: 'Cairo', sans-serif;
+
+  /* Custom Animations */
+  --animate-fade-in-up: fade-in-up 0.8s ease-out forwards;
+  --animate-fade-in: fade-in 0.6s ease-out forwards;
+  --animate-pulse-glow: pulse-glow 2s ease-in-out infinite;
+  --animate-float: float 3s ease-in-out infinite;
+  --animate-shimmer: shimmer 2s linear infinite;
+}
+
+/* Keyframes */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   Global Styles
+   ======================================== */
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-cairo);
+}
+
+body {
+  background-color: var(--color-primary);
+  color: #f1f5f9;
+  overflow-x: hidden;
+}
+
+/* Custom Neon Text Shadow Utilities */
+.text-shadow-neon-orange {
+  text-shadow: 0 0 8px #fb923c, 0 0 20px #fb923c, 0 0 40px #ea580c;
+}
+
+.text-shadow-neon-cyan {
+  text-shadow: 0 0 6px #22d3ee, 0 0 15px #0284c7;
+}
+
+.text-shadow-neon-blue {
+  text-shadow: 0 0 5px #38bdf8, 0 0 15px #0284c7;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111827;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ea580c;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #fb923c;
+}
+
+/* Selection styling */
+::selection {
+  background-color: #ea580c;
+  color: white;
+}

@@ -1,0 +1,86 @@
+---
+// Header.astro — Sticky header with backdrop blur and responsive mobile menu
+---
+
+<header id="main-header" class="fixed top-0 right-0 left-0 z-50 transition-all duration-300 bg-transparent">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-18 sm:h-20">
+      
+      <!-- Logo (Right side in RTL) -->
+      <a href="#home" class="flex items-center gap-3 group">
+        <div class="bg-slate-100/95 backdrop-blur-sm p-1.5 sm:p-2 rounded-xl border border-white/20 hover:bg-white transition-all duration-300 shadow-lg shadow-black/10 flex items-center justify-center">
+          <img src="/logo_icon.png" alt="Steelora Icon" class="h-8 sm:h-9 w-8 sm:w-9 object-contain" />
+        </div>
+        <span class="text-xl sm:text-2xl font-black tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500">
+          Steelora
+        </span>
+      </a>
+      
+      <!-- Desktop Navigation (Left side in RTL) -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#home" class="nav-link text-gray-300 hover:text-amber-400 transition-colors duration-300 text-sm font-medium">الرئيسية</a>
+        <a href="#products" class="nav-link text-gray-300 hover:text-amber-400 transition-colors duration-300 text-sm font-medium">شواياتنا</a>
+        <a href="#about" class="nav-link text-gray-300 hover:text-amber-400 transition-colors duration-300 text-sm font-medium">من نحن</a>
+        <a href="#contact" class="nav-link text-gray-300 hover:text-amber-400 transition-colors duration-300 text-sm font-medium px-5 py-2 rounded-full border border-amber-500/50 hover:bg-amber-500/10">تواصل معنا</a>
+      </div>
+      
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2 group" aria-label="القائمة">
+        <span class="block w-6 h-0.5 bg-white transition-all duration-300 origin-center group-[.active]:rotate-45 group-[.active]:translate-y-2"></span>
+        <span class="block w-6 h-0.5 bg-white transition-all duration-300 group-[.active]:opacity-0"></span>
+        <span class="block w-4 h-0.5 bg-amber-400 transition-all duration-300 origin-center group-[.active]:w-6 group-[.active]:-rotate-45 group-[.active]:-translate-y-2"></span>
+      </button>
+    </div>
+  </nav>
+  
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu" class="md:hidden fixed inset-0 top-18 bg-slate-900/95 backdrop-blur-xl -translate-x-full transition-transform duration-300 ease-in-out z-40">
+    <div class="flex flex-col items-center justify-center h-full gap-8">
+      <a href="#home" class="mobile-nav-link text-2xl font-semibold text-white hover:text-amber-400 transition-colors duration-300">الرئيسية</a>
+      <a href="#products" class="mobile-nav-link text-2xl font-semibold text-white hover:text-amber-400 transition-colors duration-300">شواياتنا</a>
+      <a href="#about" class="mobile-nav-link text-2xl font-semibold text-white hover:text-amber-400 transition-colors duration-300">من نحن</a>
+      <a href="#contact" class="mobile-nav-link text-2xl font-semibold text-amber-400 hover:text-amber-300 transition-colors duration-300 px-8 py-3 rounded-full border-2 border-amber-400">تواصل معنا</a>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Header scroll effect
+  const header = document.getElementById('main-header');
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header?.classList.add('bg-slate-900/90', 'backdrop-blur-md', 'shadow-lg', 'shadow-black/20');
+      header?.classList.remove('bg-transparent');
+    } else {
+      header?.classList.remove('bg-slate-900/90', 'backdrop-blur-md', 'shadow-lg', 'shadow-black/20');
+      header?.classList.add('bg-transparent');
+    }
+  });
+  
+  // Mobile menu toggle
+  mobileMenuBtn?.addEventListener('click', () => {
+    mobileMenuBtn.classList.toggle('active');
+    if (mobileMenu?.classList.contains('-translate-x-full')) {
+      mobileMenu.classList.remove('-translate-x-full');
+      mobileMenu.classList.add('translate-x-0');
+      document.body.style.overflow = 'hidden';
+    } else {
+      mobileMenu?.classList.add('-translate-x-full');
+      mobileMenu?.classList.remove('translate-x-0');
+      document.body.style.overflow = '';
+    }
+  });
+  
+  // Close mobile menu on link click
+  document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenuBtn?.classList.remove('active');
+      mobileMenu?.classList.add('-translate-x-full');
+      mobileMenu?.classList.remove('translate-x-0');
+      document.body.style.overflow = '';
+    });
+  });
+</script>

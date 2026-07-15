@@ -1,0 +1,89 @@
+---
+// About.astro — About Us section with brand story
+---
+
+<section id="about" class="relative py-20 sm:py-28 bg-gradient-to-b from-primary to-slate-900 overflow-hidden">
+  <!-- Decorative elements -->
+  <div class="absolute top-20 left-0 w-72 h-72 bg-amber-500/5 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-20 right-0 w-72 h-72 bg-orange-500/5 rounded-full blur-3xl"></div>
+  
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      
+      <!-- Text Content -->
+      <div>
+        <span class="inline-block px-4 py-1.5 bg-amber-500/10 border border-amber-500/20 rounded-full text-amber-400 text-sm font-medium mb-4">قصتنا</span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-6">
+          من نحن؟
+        </h2>
+        <div class="w-16 h-1 bg-gradient-to-l from-amber-400 to-orange-600 rounded-full mb-8"></div>
+        
+        <div class="space-y-5 text-gray-300 leading-relaxed">
+          <p class="text-lg">
+            <span class="text-amber-400 font-bold">ستيلورا</span> — علامة مصرية متخصصة في تصنيع الشوايات والأثاث الخارجي من الحديد الصلب عالي الجودة. نجمع بين الدقة الهندسية والتصميم العصري لنقدم لك منتجات تدوم لسنوات.
+          </p>
+          <p>
+            تأسست ستيلورا على يد فريق من المهندسين المتخصصين في تشكيل المعادن والتصنيع الثقيل، بهدف تقديم شوايات بمواصفات عالمية بأيدٍ مصرية. نحن نفهم احتياجات السوق المصري ونصمم منتجاتنا لتتحمل أقسى الظروف.
+          </p>
+          <p>
+            سواء كنت تبحث عن شواية للاستخدام المنزلي أو التجاري، فإن ستيلورا توفر لك الجودة والمتانة والأداء الذي تستحقه. كل قطعة تخرج من مصنعنا تمر بمراحل فحص صارمة لضمان أعلى معايير السلامة والجودة.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Stats & Visual -->
+      <div class="relative">
+        <!-- Stats Grid -->
+        <div class="grid grid-cols-2 gap-4 sm:gap-6">
+          <!-- Stat 1 -->
+          <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 sm:p-8 text-center hover:border-amber-500/30 transition-all duration-300 group">
+            <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-amber-500/10 flex items-center justify-center group-hover:bg-amber-500/20 transition-colors duration-300">
+              <svg class="w-7 h-7 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+              </svg>
+            </div>
+            <p class="text-3xl sm:text-4xl font-black text-white mb-1">+10</p>
+            <p class="text-gray-400 text-sm">سنوات خبرة</p>
+          </div>
+          
+          <!-- Stat 2 -->
+          <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 sm:p-8 text-center hover:border-amber-500/30 transition-all duration-300 group">
+            <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-amber-500/10 flex items-center justify-center group-hover:bg-amber-500/20 transition-colors duration-300">
+              <svg class="w-7 h-7 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+            <p class="text-3xl sm:text-4xl font-black text-white mb-1">+500</p>
+            <p class="text-gray-400 text-sm">عميل سعيد</p>
+          </div>
+          
+          <!-- Stat 3 -->
+          <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 sm:p-8 text-center hover:border-amber-500/30 transition-all duration-300 group">
+            <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-amber-500/10 flex items-center justify-center group-hover:bg-amber-500/20 transition-colors duration-300">
+              <svg class="w-7 h-7 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <p class="text-3xl sm:text-4xl font-black text-white mb-1">100%</p>
+            <p class="text-gray-400 text-sm">صناعة مصرية</p>
+          </div>
+          
+          <!-- Stat 4 -->
+          <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 sm:p-8 text-center hover:border-amber-500/30 transition-all duration-300 group">
+            <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-amber-500/10 flex items-center justify-center group-hover:bg-amber-500/20 transition-colors duration-300">
+              <svg class="w-7 h-7 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+              </svg>
+            </div>
+            <p class="text-3xl sm:text-4xl font-black text-white mb-1">⭐ 4.9</p>
+            <p class="text-gray-400 text-sm">تقييم العملاء</p>
+          </div>
+        </div>
+        
+        <!-- Decorative corner element -->
+        <div class="absolute -top-4 -right-4 w-20 h-20 border-t-2 border-r-2 border-amber-500/20 rounded-tr-3xl"></div>
+        <div class="absolute -bottom-4 -left-4 w-20 h-20 border-b-2 border-l-2 border-amber-500/20 rounded-bl-3xl"></div>
+      </div>
+    </div>
+  </div>
+</section>
