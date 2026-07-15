@@ -10,7 +10,6 @@
     loop
     playsinline
     preload="auto"
-    poster="/images/hero-grill.jpg"
     aria-hidden="true"
     tabindex="-1"
     class="absolute inset-0 z-0 h-full w-full object-cover"
@@ -124,7 +123,7 @@
 </section>
 
 <script>
-  // Respect prefers-reduced-motion — pause video, show poster as static bg
+  // Respect prefers-reduced-motion — pause video if enabled
   const heroVideo = document.querySelector('#home video') as HTMLVideoElement | null;
   if (heroVideo) {
     const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
