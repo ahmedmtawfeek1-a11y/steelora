@@ -4,16 +4,24 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
+  lang?: 'ar' | 'en';
+  dir?: 'rtl' | 'ltr';
 }
 
 const {
-  title = 'STEELORA | شوايات ستيلورا — صناعة مصرية بجودة عالمية',
-  description = 'ستيلورا — شوايات فاخرة من الحديد الصلب المصري. تصميم هندسي متقن، توزيع حراري مثالي، ومتانة تدوم لسنوات. اطلب شوايتك الآن!'
+  lang = 'ar',
+  dir = 'rtl',
+  title = lang === 'ar' 
+    ? 'STEELORA | شوايات ستيلورا — صناعة مصرية بجودة عالمية' 
+    : 'STEELORA | Premium Steel Grills & Outdoor Fabrication Egypt',
+  description = lang === 'ar'
+    ? 'ستيلورا — شوايات فاخرة من الحديد الصلب المصري. تصميم هندسي متقن، توزيع حراري مثالي، ومتانة تدوم لسنوات. اطلب شوايتك الآن!'
+    : 'Steelora — premium steel grills manufactured in Egypt. Precise engineering, perfect heat distribution, and durability built to last for years. Order yours now!'
 } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang={lang} dir={dir} class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,22 +32,22 @@ const {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content="ar_EG" />
+    <meta property="og:locale" content={lang === 'ar' ? 'ar_EG' : 'en_US'} />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <!-- Google Fonts: Cairo -->
+    <!-- Google Fonts: Cairo, Inter, Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
 
     <title>{title}</title>
   </head>
-  <body class="font-cairo antialiased">
+  <body class={`antialiased bg-primary text-slate-100 ${lang === 'ar' ? 'font-cairo' : 'font-outfit'}`}>
     <slot />
   </body>
 </html>
